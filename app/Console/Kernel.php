@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Console\Scheduling\RoleMiddleware;
+
 
 class Kernel extends ConsoleKernel
 {
@@ -14,6 +16,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
     }
+
+    protected $routeMiddleware = [
+        //
+        'role' => \App\Http\Middleware\RoleMiddleware::class
+    ];
 
     /**
      * Register the commands for the application.
