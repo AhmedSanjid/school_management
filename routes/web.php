@@ -21,6 +21,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/admin/create-teacher', [AdminController::class, 'createTeacher']);
     Route::get('/admin/users', [AdminController::class, 'viewUsers']);
 });
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
